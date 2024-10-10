@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/auto.css"> <!-- Link to the CSS file -->
+    <title>AutoAccessor 2.0</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>AutoAccessor 2.0</h1>
+            <h5>Inputs</h5>
+        </div>
+    
+        <!-- Image Upload Section -->
+        <div class="drop-area">
+            <h6>Image</h6>
+            <p>Drop Vehicle Image Here</p>
+            <p>- or -</p>
+            <button class="btn btn-primary">Click to Upload</button>
+        </div>
+    
+        <!-- Registration Number Input -->
+        <div class="form-group">
+            <label for="registrationNumber">Registration Number</label>
+            <input type="text" class="form-control" id="registrationNumber" placeholder="Enter Registration Number">
+        </div>
+        <button class="btn btn-success">Submit</button>
+        <br>
+        <!-- Outputs Section -->
+        <h6>Outputs</h6>
+        <!-- Table for Results wrapped in table-responsive -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Detail Type</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Duplicate Check -->
+                    <tr>
+                        <td>Duplicate Check</td>
+                        <td colspan="3">No duplicates found</td>
+                    </tr>
+    
+                    <!-- Customer Details -->
+                    <tr>
+                        <td>Customer Details</td>
+                        <td>Louis Amakye</td>
+                        <td>Email: ###</td>
+                        <td>Phone: #####</td>
+                    </tr>
+    
+                    <!-- Premium Details -->
+                    <tr>
+                        <td>Premium Details</td>
+                        <td>Inception Date: 08/11/2023</td>
+                        <td>Expiry Date: 07/12/2023</td>
+                        <td>Sum Insured: 6000</td>
+                    </tr>
+    
+                    <!-- Market Value (GHS) -->
+                    <tr>
+                        <td>Market Value (GHS)</td>
+                        <td>Model: Sienna</td>
+                        <td>Manufacturer: Toyota</td>
+                        <td>Year: 2013</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

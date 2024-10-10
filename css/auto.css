@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+    background-color: #faf8f8;
+    background-image: url('/img/pexels-haim-charbit-46102840-28861897.jpg'); /* Replace 'your-image-url.jpg' with the actual image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Makes the image stay fixed when scrolling */
+}
+h1, h5, h6, p, label, table, th, td {
+    color: #fff !important; /* Make sure headers, paragraphs, labels, and table content are white */
+}
+
+.btn {
+    color: #fff !important; /* Ensure button text remains white */
+}
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(25, 32, 209, 0.9); /* Transparent white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Green Section Header Styling */
+.section-header {
+    color: #28a745; /* Green color */
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Image Upload Section */
+.drop-area {
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Customer and Premium Details */
+.customer-details,
+.premium-details,
+.market-value {
+    margin-top: 20px;
+}
+
+.detail-item {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* Responsive Table */
+.table-responsive {
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+/* Adjust table on smaller screens */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table td {
+        display: block;
+        width: 100%;
+        text-align: left; /* Changed from right to left */
+        padding-left: 15px;
+        position: relative;
+        border-top: 1px solid #ddd;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
