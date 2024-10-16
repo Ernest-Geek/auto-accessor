@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "auto-accessor",
+			"path": "."
+		},
+		{
+			"name": "car-repair-html-template",
+			"path": "../car-repair-html-template"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "car-repair-html-template"
+	}
+}
