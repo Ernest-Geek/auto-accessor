@@ -3,10 +3,6 @@
 		{
 			"name": "auto-accessor",
 			"path": "."
-		},
-		{
-			"name": "car-repair-html-template",
-			"path": "../car-repair-html-template"
 		}
 	],
 	"settings": {
