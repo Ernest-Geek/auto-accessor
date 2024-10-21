@@ -1,25 +1,19 @@
 /* General Styles */
 body {
     background-color: #faf8f8;
-    background-image: url('/img/pexels-haim-charbit-46102840-28861897.jpg'); /* Replace 'your-image-url.jpg' with the actual image URL */
+    /* background-image: url('/img/pexels-haim-charbit-46102840-28861897.jpg'); Replace 'your-image-url.jpg' with the actual image URL */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Makes the image stay fixed when scrolling */
 }
 h1, h5, h6, p, label, table, th, td {
-    color: #fff !important; /* Make sure headers, paragraphs, labels, and table content are white */
+    color: #031455 !important; /* Make sure headers, paragraphs, labels, and table content are white */
 }
 
 .btn {
     color: #fff !important; /* Ensure button text remains white */
 }
-.container {
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(25, 32, 209, 0.9); /* Transparent white background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Green Section Header Styling */
 .section-header {

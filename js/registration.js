@@ -1,7 +1,6 @@
-// main.js
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
-    
+
     form.addEventListener("submit", async function (event) {
         event.preventDefault(); // Prevent the default form submission
 
@@ -11,7 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = document.getElementById("form3Example4c").value;
         const confirmPassword = document.getElementById("form3Example4cd").value;
 
-        // Basic validation (you can enhance this)
+        // Basic validation
+        if (!username || !email || !password || !confirmPassword) {
+            alert("Please fill out all the fields.");
+            return;
+        }
+
         if (password !== confirmPassword) {
             alert("Passwords do not match.");
             return;
@@ -42,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Optionally redirect to login or home page
                 window.location.href = "/login.html";
             } else {
-                // Handle errors (e.g., user already exists)
+                // Handle errors (e.g., user already exists, server validation failure)
                 alert(result.message || "Registration failed. Please try again.");
             }
         } catch (error) {
@@ -50,4 +54,25 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("An error occurred. Please try again later.");
         }
     });
+
+    // Toggle password visibility
+    const toggleIcons = document.querySelectorAll('.toggle-password');
+    toggleIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const fieldId = this.dataset.field;
+            togglePasswordVisibility(fieldId);
+        });
+    });
 });
+
+// Function to toggle password visibility
+function togglePasswordVisibility(fieldId) {
+    const field = document.getElementById(fieldId);
+    if (field.type === "password") {
+        field.type = "text";
+    } else {
+        field.type = "password";
+    }
+}
+
+
