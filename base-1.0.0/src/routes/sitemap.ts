@@ -34,9 +34,9 @@ const sitemap: MenuItem[] = [
     icon: 'solar:chart-square-bold',
   },
   {
-    id: 'invoice',
+    id: 'Home',
     subheader: 'Invoice',
-    path: '#!',
+    path: '/#!',
     icon: 'solar:ticket-bold',
   },
   {

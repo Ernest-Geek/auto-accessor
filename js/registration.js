@@ -30,13 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         try {
             // Send POST request to the API
-            const response = await fetch("http://localhost:5000/api/register", {
+            const response = await fetch("http://127.0.0.1:5000/api/register", {
                 method: "POST",
+                mode: "cors", // Add this
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(userData),
             });
+            
 
             const result = await response.json();
 

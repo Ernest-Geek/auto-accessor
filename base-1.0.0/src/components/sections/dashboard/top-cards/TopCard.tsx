@@ -23,9 +23,9 @@ const TopCard = ({ data }: TopCardProps) => {
       </Stack>
 
       <div>
-        <Typography variant="h5" color="neutral.darker" fontWeight={800}>
+        {/* <Typography variant="h5" color="neutral.darker" fontWeight={800}>
           {data.count}+
-        </Typography>
+        </Typography> */}
         <Typography variant="body2" color="text.secondary">
           {data.title}
         </Typography>

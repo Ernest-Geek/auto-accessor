@@ -27,7 +27,7 @@ const Reports = () => {
     <Paper sx={{ pr: 0, height: 410 }}>
       <Stack mt={-0.5} pr={3.5} alignItems="center" justifyContent="space-between">
         <Typography variant="h6" color="text.secondary">
-          Reports
+          WELCOME
         </Typography>
 
         <ActionMenu actions={actions} />
