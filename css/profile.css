@@ -1,0 +1,98 @@
+.main-content {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.card-header h4 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card-header p {
+    color: #777;
+    font-size: 1rem;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group .form-label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-group .form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.input-group .form-control:focus {
+    border-color: #007bff;
+    background-color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.alert {
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.bg-gradient-info {
+    background-color: #17a2b8;
+    background-image: linear-gradient(180deg, #17a2b8 0%, #138496 100%);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}

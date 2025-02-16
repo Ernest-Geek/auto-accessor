@@ -1,4 +1,8 @@
 /********** Template CSS **********/
+input,
+button {
+    color: white !important;
+}
 :root {
     --primary: #D81324;
     --secondary: #0B2154;
@@ -18,7 +22,6 @@
     z-index: 99;
 }
 
-
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -33,6 +36,16 @@
     opacity: 1;
 }
 
+/* Ensure the input text is black */
+input.form-control {
+    color: black !important; /* Makes the text you enter black */
+}
+
+/* Make placeholder text black */
+input.form-control::placeholder {
+    color: black !important; /* Makes the placeholder text black */
+}
+
 
 /*** Button ***/
 .d-flex {
@@ -42,8 +55,52 @@
 .justify-content-center {
     justify-content: center;
 }
+/* Video Background */
+#video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire screen */
+    z-index: -1; /* Keeps the video behind the content */
+}
 
-.register-button {
+/* Ensure content is above the video */
+section.vh-100 {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    #video-background {
+        /* Keep the video responsive on mobile screens */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Make sure video adapts on larger screen sizes */
+@media (min-width: 992px) {
+    #video-background {
+        object-fit: cover; /* Ensures the video will cover the entire area without stretching */
+    }
+}
+
+
+        /* Ensure the content is displayed on top of the video */
+        .registration-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background-color: rgba(15, 15, 15, 0.8); /* Add slight transparency */
+            border-radius: 25px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+.register-button  {
     background-color: var(--primary); /* Use your primary color */
     border: none;
     color: white;
@@ -224,169 +281,80 @@
 .service .nav .nav-link.active h4 {
     color: #FFFFFF !important;
 }
+/* For Small Screen Devices */
+@media (max-width: 768px) {
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 12px 0;
+    }
 
+    .navbar-light .navbar-brand h2 {
+        font-size: 22px; /* Adjust brand font size for mobile */
+    }
 
-/*** Booking ***/
-.booking {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-bg-2.jpg) center center no-repeat;
-    background-size: cover;
+    #video-background {
+        object-fit: cover;
+        width: 100%;
+        height: 170%;
+    }
+
+    .card-body {
+        padding: 1.5rem; /* Reduces padding for better use of space */
+    }
+
+    .col-md-10 {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .form-outline {
+        margin-bottom: 1rem; /* More space for mobile screens */
+    }
+
+    .register-button {
+        width: 100%; /* Make button full-width on small screens */
+        padding: 12px;
+        font-size: 18px; /* Adjust button font size */
+    }
+
+    .text-center a {
+        font-size: 14px;
+    }
+
+    /* Adjust card's margin and padding for smaller devices */
+    .card {
+        margin-top: 30px;
+        padding: 15px;
+    }
+
+    /* Make sure the text inside the card isn't too large on small screens */
+    .h1, h4 {
+        font-size: 1.5rem; /* Adjust heading font size */
+    }
 }
 
-.bootstrap-datetimepicker-widget.bottom {
-    top: auto !important;
-}
+/* For Medium Screen Devices */
+@media (max-width: 991px) and (min-width: 769px) {
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 15px;
+        padding: 15px 0;
+    }
 
-.bootstrap-datetimepicker-widget .table * {
-    border-bottom-width: 0px;
-}
+    #video-background {
+        object-fit: cover;
+        height: 1000%;
+        width: 100%;
+    }
 
-.bootstrap-datetimepicker-widget .table th {
-    font-weight: 500;
-}
+    .card-body {
+        padding: 2rem;
+    }
 
-.bootstrap-datetimepicker-widget.dropdown-menu {
-    padding: 10px;
-    border-radius: 2px;
-}
+    .register-button {
+        padding: 14px 25px;
+        font-size: 16px;
+    }
 
-.bootstrap-datetimepicker-widget table td.active,
-.bootstrap-datetimepicker-widget table td.active:hover {
-    background: var(--primary);
-}
-
-.bootstrap-datetimepicker-widget table td.today::before {
-    border-bottom-color: var(--primary);
-}
-
-
-/*** Team ***/
-.team-item .team-overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary);
-    transform: scale(0);
-    transition: .5s;
-}
-
-.team-item:hover .team-overlay {
-    transform: scale(1);
-}
-
-.team-item .team-overlay .btn {
-    color: var(--primary);
-    background: #FFFFFF;
-}
-
-.team-item .team-overlay .btn:hover {
-    color: #FFFFFF;
-    background: var(--secondary)
-}
-
-
-/*** Testimonial ***/
-.testimonial-carousel .owl-item .testimonial-text,
-.testimonial-carousel .owl-item.center .testimonial-text * {
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-text {
-    background: var(--primary) !important;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-text * {
-    color: #FFFFFF !important;
-}
-
-.testimonial-carousel .owl-dots {
-    margin-top: 24px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    border: 1px solid #CCCCCC;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-dot.active {
-    background: var(--primary);
-    border-color: var(--primary);
-}
-
-
-/*** Footer ***/
-.footer {
-    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/carousel-bg-1.jpg) center center no-repeat;
-    background-size: cover;
-}
-
-.footer .btn.btn-social {
-    margin-right: 5px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--light);
-    border: 1px solid #FFFFFF;
-    border-radius: 35px;
-    transition: .3s;
-}
-
-.footer .btn.btn-social:hover {
-    color: var(--primary);
-}
-
-.footer .btn.btn-link {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0;
-    text-align: left;
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: normal;
-    text-transform: capitalize;
-    transition: .3s;
-}
-
-.footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
-}
-
-.footer .btn.btn-link:hover {
-    letter-spacing: 1px;
-    box-shadow: none;
-}
-
-.footer .copyright {
-    padding: 25px 0;
-    font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
-}
-
-.footer .copyright a {
-    color: var(--light);
-}
-
-.footer .footer-menu a {
-    margin-right: 15px;
-    padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .3);
-}
-
-.footer .footer-menu a:last-child {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
+    .text-center a {
+        font-size: 16px;
+    }
 }

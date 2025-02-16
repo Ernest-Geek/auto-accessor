@@ -8,6 +8,7 @@ load_dotenv()
 class Config:
     # Security key for sessions and forms
     SECRET_KEY = os.environ.get('SECRET_KEY', 'your_default_secret_key')
+    
 
     # Database configuration
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///site.db')

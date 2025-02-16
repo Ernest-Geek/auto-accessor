@@ -1,0 +1,69 @@
+/* Purchase Confirmation Section */
+.purchase-confirmation {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Section Title for Confirmation */
+.purchase-confirmation .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Note Styling for Confirmation */
+.purchase-confirmation .note {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Purchase Details */
+.purchase-details {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.purchase-details .payment-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.purchase-details .payment-method, 
+.purchase-details .payment-amount,
+.purchase-details .transaction-status {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Buttons for Purchase Actions */
+.purchase-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.purchase-actions .back-button, 
+.purchase-actions .continue-button {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.purchase-actions .back-button:hover, 
+.purchase-actions .continue-button:hover {
+    background-color: #218838;
+}

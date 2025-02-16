@@ -1,40 +1,86 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.querySelector("form");
+    // Login form
+    const loginForm = document.querySelector("form"); // Select the login form
+    const spinner = document.getElementById("spinner"); // Get the spinner element
 
     loginForm.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); // Prevent the default form submission
 
-        // Get user input values
-        const email = document.getElementById("form2Example1").value.trim();
-        const password = document.getElementById("form2Example2").value.trim();
+        // Show the spinner
+        spinner.style.display = "flex"; // Show the loading spinner
 
-        if (!email || !password) {
-            alert("Please fill in both email and password.");
-            return;
-        }
+        // Gather form data
+        const email = document.getElementById("form2Example1").value; // Get email input
+        const password = document.getElementById("form2Example2").value; // Get password input
 
-        const loginData = { email, password };
+        // Create login data object
+        const loginData = {
+            email: email,
+            password: password,
+        };
 
         try {
+            // Send POST request to the API
             const response = await fetch("http://127.0.0.1:5000/api/login", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                },
                 body: JSON.stringify(loginData),
             });
 
-            const result = await response.json();
+            const result = await response.json(); // Parse the response JSON
 
             if (response.ok) {
-                alert("Login successful!");
-                localStorage.setItem("userToken", result.token); // Store token if needed
-                window.location.href = "http://localhost:3000/base"; // Redirect after login
+                // Handle successful login and redirect to the Dashboard
+                window.location.href = "/Dashboard.html"; // Redirect to the dashboard
             } else {
-                alert(result.message || "Login failed. Please check your credentials.");
+                // Handle errors (e.g., invalid credentials)
+                alert(result.message || "Login failed. Please try again.");
             }
         } catch (error) {
-            console.error("Error:", error);
-            alert("Server error. Please try again later.");
+            console.error("Error:", error); // Log any errors
+            alert("An error occurred. Please try again later.");
+        } finally {
+            // Hide the spinner after the login process is done
+            spinner.style.display = "none"; // Hide the loading spinner
         }
     });
+
+    // Logout functionality
+    const logoutButton = document.getElementById("logout-button"); // Assuming you have an ID for the logout button
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", async function (event) {
+            event.preventDefault(); // Prevent default anchor behavior (navigation)
+
+            try {
+                // Send the POST request to log out
+                const response = await fetch("http://127.0.0.1:5000/api/logout", {
+                    method: "POST",
+                    credentials: "include", // Send the session cookie to ensure the user is logged in
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Handle successful logout
+                    alert("Logged out successfully!");
+                    // Redirect to the login page after logout
+                    window.location.href = "/login.html"; // Redirect to the login page
+                } else {
+                    // Handle error if something goes wrong
+                    alert(result.message || "Logout failed. Please try again.");
+                }
+            } catch (error) {
+                // Catch network or other errors
+                console.error("Error during logout:", error);
+                alert("An error occurred during logout. Please try again later.");
+            }
+        });
+    }
 });
+
+
+
 

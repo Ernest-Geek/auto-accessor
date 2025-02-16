@@ -56,19 +56,21 @@ def login():
 
     if not email or not password:
         return jsonify({"message": "Email and Password are required"}), 400
-    
+
     user = User.query.filter_by(email=email).first()
     if user and bcrypt.check_password_hash(user.password_hash, password):
-        login_user(user)
+        login_user(user)  # This logs the user in and sets the session cookie
         return jsonify({"message": "Logged in successfully"}), 200
     else:
         return jsonify({"message": "Invalid email or password"}), 401
+
     
 @bp.route("/api/logout", methods=['POST'])
 @login_required
 def logout():
     logout_user()
     return jsonify({"message": "Logged out succesfully"}), 200
+
 
 
 
