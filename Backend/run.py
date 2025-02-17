@@ -5,7 +5,7 @@ from flask_cors import CORS
 app = create_app()
 
 # Allow both local and production environments
-CORS(app, resources={r"/api/*": {"origins": ["https://auto-accessor.vercel.app", "http://127.0.0.1:5501"]}})
+CORS(app, resources={r"/api/*": {"origins": ["https://www.worktoolz.tech", "https://auto-accessor.vercel.app", ]}})
 
 # Ensure all database tables are created
 with app.app_context():
