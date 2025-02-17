@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Determine the backend URL based on the environment
+    const backendUrl = window.location.hostname === 'localhost'
+        ? 'http://127.0.0.1:5000' // Development backend URL
+        : 'https://auto-accessor.vercel.app'; // Production backend URL
+
     // Login form
     const loginForm = document.querySelector("form"); // Select the login form
     const spinner = document.getElementById("spinner"); // Get the spinner element
@@ -20,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            // Send POST request to the API
-            const response = await fetch("http://127.0.0.1:5000/api/login", {
+            // Send POST request to the API using the dynamically determined backend URL
+            const response = await fetch(`${backendUrl}/api/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -55,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault(); // Prevent default anchor behavior (navigation)
 
             try {
-                // Send the POST request to log out
-                const response = await fetch("http://127.0.0.1:5000/api/logout", {
+                // Send the POST request to log out using the dynamically determined backend URL
+                const response = await fetch(`${backendUrl}/api/logout`, {
                     method: "POST",
                     credentials: "include", // Send the session cookie to ensure the user is logged in
                 });
@@ -80,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 
 
 

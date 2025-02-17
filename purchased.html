@@ -203,7 +203,18 @@
 
         <main class="main-container">
             <div class="table-container">
-                <h3 class="table-title">Purchased</h3>
+                <div class="table-header">
+                    <!-- Warning Message -->
+                    <div class="warning-message">
+                        <p>You have 10 minutes time to REPORT a BAD tool, in other words, the REPORT button will disappear and show "Expired". After that, you don't have rights to complain about that tool.</p>
+                    </div>
+                    <h3 class="table-title">Purchased</h3>
+                    <!-- Search Box -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" class="search-box" placeholder="Search...">
+                    </div>
+                </div>
+                
                 <table class="data-table">
                     <thead>
                         <tr>
@@ -215,35 +226,30 @@
                             <th>Report</th>
                             <th class="cat_action_list">Price</th>
                         </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><p></p></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <!-- <a href="/add_balance.html" class="buy-now-btn" onclick="showModal(event)"></a> -->
-                                </td>
-                            </tr>
-                        
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><p></p></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                </td>
-                            </tr>
-                        </tbody>
-                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><p></p></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><p></p></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
+        
             <div id="lowBalanceModal" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
@@ -253,7 +259,8 @@
                 </div>
             </div>
         </main>
-
+        
+        
      </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
         <!-- Custom JS -->

@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Determine the backend URL based on the environment
+    const backendUrl = window.location.hostname === 'localhost'
+        ? 'http://127.0.0.1:5000' // Development backend URL
+        : 'https://auto-accessor.vercel.app'; // Production backend URL
+
     const form = document.querySelector("form");
 
     form.addEventListener("submit", async function (event) {
@@ -29,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            // Send POST request to the API
-            const response = await fetch("http://127.0.0.1:5000/api/register", {
+            // Send POST request to the API using the dynamically determined backend URL
+            const response = await fetch(`${backendUrl}/api/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -74,5 +79,6 @@ function togglePasswordVisibility(fieldId) {
         field.type = "password";
     }
 }
+
 
 
