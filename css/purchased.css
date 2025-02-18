@@ -48,6 +48,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap; /* This allows the buttons to wrap on smaller screens */
 }
 
 .purchase-actions .back-button, 
@@ -82,4 +83,79 @@
     align-items: center;
     margin-bottom: 20px;
     position: relative;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 768px (tablets and small desktops) */
+@media (max-width: 768px) {
+    .purchase-confirmation {
+        padding: 20px;
+    }
+
+    .purchase-confirmation .section-title {
+        font-size: 1.8rem;
+    }
+
+    .purchase-confirmation .note {
+        font-size: 1.1rem;
+    }
+
+    .purchase-details .payment-title {
+        font-size: 1.4rem;
+    }
+
+    .purchase-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .purchase-actions .back-button, 
+    .purchase-actions .continue-button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .warning-message p {
+        font-size: 0.9rem;
+    }
+
+    .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+    .purchase-confirmation {
+        padding: 15px;
+    }
+
+    .purchase-confirmation .section-title {
+        font-size: 1.6rem;
+    }
+
+    .purchase-confirmation .note {
+        font-size: 1rem;
+    }
+
+    .purchase-details .payment-title {
+        font-size: 1.2rem;
+    }
+
+    .purchase-actions .back-button, 
+    .purchase-actions .continue-button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .warning-message p {
+        font-size: 0.8rem;
+    }
+
+    .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
