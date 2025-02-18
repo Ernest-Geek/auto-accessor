@@ -1,19 +1,19 @@
-from app import create_app, db
+from flask import Flask
 from flask_cors import CORS
 
-# Initialize the app with CORS support
+# Initialize the app
 app = create_app()
 
-# Allow both local and production environments
-from flask_cors import CORS
-CORS(app, resources={r"/api/*": {"origins": ["http://127.0.0.1:5501", "http://www.worktoolz.tech"]}})
+# Allow requests from your frontend domain
+CORS(app, resources={r"/api/*": {"origins": ["https://www.worktoolz.tech"]}})
 
-# Ensure all database tables are created
-with app.app_context():
-    db.create_all()
+# Your routes
+@app.route('/api/login', methods=['POST'])
+def login():
+    return "Login successful!"
 
-# Run the app
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
