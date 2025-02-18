@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Determine the backend URL based on the environment
-    const backendUrl = window.location.hostname === 'localhost'
+    const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://127.0.0.1:5000' // Development backend URL
         : 'https://auto-accessor.vercel.app'; // Production backend URL
 
@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 
 
 
