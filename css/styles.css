@@ -268,12 +268,17 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 30px 30px 30px 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
   
   .sidebar-title > span {
     display: none;
   }
+
+  .brand-name {
+    text-align: right;
+}
+
   
   .sidebar-brand {
     margin-top: 15px;
