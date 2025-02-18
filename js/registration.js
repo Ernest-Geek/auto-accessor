@@ -1,9 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Determine the backend URL based on the environment
-    const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? 'http://127.0.0.1:5000' // Development backend URL
-        : 'https://auto-accessor.vercel.app'; // Production backend URL
+// Import Firebase SDK
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 
+// Your Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDdg6hJqOca-zrrk7rB_T6V_fvymwh-Gxg",
+  authDomain: "worktoolz.firebaseapp.com",
+  projectId: "worktoolz",
+  storageBucket: "worktoolz.firebasestorage.app",
+  messagingSenderId: "574089340019",
+  appId: "1:574089340019:web:03d68e40b13f48724e3606",
+  measurementId: "G-D8ZDEHZE1G"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
 
     form.addEventListener("submit", async function (event) {
@@ -26,37 +40,25 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Create user object
-        const userData = {
-            username: username,
-            email: email,
-            password: password,
-        };
-
         try {
-            // Send POST request to the API using the dynamically determined backend URL
-            const response = await fetch(`${backendUrl}/api/register`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(userData),
-            });
+            // Register user with Firebase Authentication
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
 
-            const result = await response.json();
+            // Handle successful registration
+            console.log("User registered successfully:", user.email);
+            alert("Registration successful!");
 
-            if (response.ok) {
-                // Handle successful registration (redirect, show message, etc.)
-                alert("Registration successful!");
-                // Optionally redirect to login or home page
-                window.location.href = "/login.html";
-            } else {
-                // Handle errors (e.g., user already exists, server validation failure)
-                alert(result.message || "Registration failed. Please try again.");
-            }
+            // Optionally, redirect to login or home page
+            window.location.href = "/login.html"; // Redirect to login page
         } catch (error) {
-            console.error("Error:", error);
-            alert("An error occurred. Please try again later.");
+            // Handle registration errors (e.g., email already in use)
+            console.error("Error:", error.message);
+            if (error.code === 'auth/email-already-in-use') {
+                alert("This email is already registered.");
+            } else {
+                alert("Registration failed. Please check your input and try again.");
+            }
         }
     });
 
@@ -79,6 +81,11 @@ function togglePasswordVisibility(fieldId) {
         field.type = "password";
     }
 }
+
+
+  
+
+
 
 
 
